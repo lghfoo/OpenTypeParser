@@ -4,7 +4,7 @@
 
 ## 演示
 * 解析字体文件  
-![image](https://github.com/lghfoo/OpenTypeParser/blob/master/demo/parse.gif)
+![image](https://github.com/lghfoo/OpenTypeParser/blob/master/Demo/parse.gif)
 * 根据图形数据描绘轮廓
 	* 普通unicode字符（符号、数字和字母）  
 	![image](https://github.com/lghfoo/OpenTypeParser/blob/master/Demo/deparse_unicode_symbol.gif)
