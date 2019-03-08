@@ -4,14 +4,14 @@
 
 ## 演示
 * 解析字体文件  
-![image](https://github.com/lghfoo/DarkEcho/blob/master/demo/parse.gif)
+![image](https://github.com/lghfoo/OpenTypeParser/blob/master/demo/parse.gif)
 * 根据图形数据描绘轮廓
 	* 普通unicode字符（符号、数字和字母）  
-	![image](https://github.com/lghfoo/DarkEcho/blob/master/demo/deparse_unicode_symbol.gif)
+	![image](https://github.com/lghfoo/OpenTypeParser/blob/master/Demo/deparse_unicode_symbol.gif)
 	* 普通unicode字符（中文）  
-	![image](https://github.com/lghfoo/DarkEcho/blob/master/demo/deparse_unicode_ch.gif)
+	![image](https://github.com/lghfoo/OpenTypeParser/blob/master/Demo/deparse_unicode_ch.gif)
 	* [iconfont](https://www.iconfont.cn/)  
-	![image](https://github.com/lghfoo/DarkEcho/blob/master/demo/deparse_iconfont.gif)
+	![image](https://github.com/lghfoo/OpenTypeParser/blob/master/Demo/deparse_iconfont.gif)
 
 ## 输入
 基本支持Win10的Fonts文件夹下的单一字体文件以及iconfont字体文件
