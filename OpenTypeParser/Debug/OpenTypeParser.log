@@ -1,0 +1,11 @@
+﻿  main.cpp
+c:\users\lgh\source\repos\opentypeparser\opentypeparser\table_cmap.h(142): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+c:\users\lgh\source\repos\opentypeparser\opentypeparser\table_glyf.h(85): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+c:\users\lgh\source\repos\opentypeparser\opentypeparser\table_glyf.h(70): warning C4018: “<”: 有符号/无符号不匹配
+c:\users\lgh\source\repos\opentypeparser\opentypeparser\table_glyf.h(79): warning C4018: “<”: 有符号/无符号不匹配
+c:\users\lgh\source\repos\opentypeparser\opentypeparser\table_glyf.h(83): warning C4018: “<”: 有符号/无符号不匹配
+c:\users\lgh\source\repos\opentypeparser\opentypeparser\table_glyf.h(169): warning C4018: “<”: 有符号/无符号不匹配
+c:\users\lgh\source\repos\opentypeparser\opentypeparser\table_glyf.h(390): warning C4018: “<”: 有符号/无符号不匹配
+c:\users\lgh\source\repos\opentypeparser\opentypeparser\table_glyf.h(444): warning C4018: “<”: 有符号/无符号不匹配
+c:\users\lgh\source\repos\opentypeparser\opentypeparser\opentypeparser.h(45): warning C4244: “初始化”: 从“std::streamoff”转换到“int”，可能丢失数据
+  OpenTypeParser.vcxproj -> C:\Users\lgh\source\repos\OpenTypeParser\Debug\OpenTypeParser.exe
