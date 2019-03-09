@@ -1,6 +1,6 @@
 
 # Open Type Parser  
-## 项目简介  
+## 简介  
 >根据[微软文档](https://docs.microsoft.com/en-us/typography/opentype/spec/)，将OpenType文件解析成由直线和贝塞尔曲线构成的图形数据文件，并根据解析得到的图形数据文件用OpenGL描绘出文字的轮廓。
 
 ## 演示
