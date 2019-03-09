@@ -24,7 +24,7 @@
 |部分|说明|
 |----|----|
 |OffsetTable|大小为12个字节，从整个文件的0字节处开始，记录表格数目等信息|
-|TableRecords|紧跟在OffsetTable之后，有多少个表格，就有多少个TableRecord。每个TableRecord记录着表格的名字、大小、检验和以及表格在文件的偏移|
+|TableRecords|紧跟在OffsetTable之后，有多少个表格，就有多少个TableRecord。每个TableRecord记录着表格的名字、大小、检验和以及表格在文件中的偏移量|
 |Tables|一系列的表格(OS/2、maxp、cmap、glyf...)|
 4. 目前已解析的表格有
 	* cmap
@@ -102,7 +102,7 @@ int32 findGlyph(uint16 code) {
 	* maxp：记录着glyph的个数
 	* head：记录着loca中offset的数据格式，有offset32和offset16两种格式
 
-	解析完loca、maxp和head三个表格后，就可以解析glyf表格了。一共有两种glyph，一种是简单的glyph；另一种是复合的glyph，由多个简单的glyph组成。每个glyph都有一个header记录着基本信息，这里简单介绍一下，具体请参考微软文档以及"Table_glyf.h"：
+	解析完loca、maxp和head三个表格后，就可以解析glyf表格了。一共有两种glyph，一种是简单的glyph；另一种是复合的glyph，由多个简单的glyph组成。每个glyph都有一个header记录着基本信息，这里简单介绍一下，具体请参考微软文档以及"[**Table_glyf.h**](https://github.com/lghfoo/OpenTypeParser/blob/master/OpenTypeParser/Table_glyf.h)"：
 	* 简单的glyph
 		* 由多个contour组成
 		* contour由多个点组成
@@ -183,7 +183,7 @@ int32 findGlyph(uint16 code) {
 		 * 由多个简单glyph组成
 		 * 多个简单glyph组成复合glyph时，每个简单glyph可能要进行平移或者缩放等操作
 
-		具体的解析过程见"[**Table_glyf.h**](https://github.com/lghfoo/OpenTypeParser/blob/master/OpenTypeParser/Table_glyf.h")"
+		具体的解析过程见"[**Table_glyf.h**](https://github.com/lghfoo/OpenTypeParser/blob/master/OpenTypeParser/Table_glyf.h)"
 ## 输出
 输出文件的内容是按块划分的，有的块只有一行，有的块有多行，总共有四种块
 * [pass]：只有一行，内容为pass，表示空的glyph
