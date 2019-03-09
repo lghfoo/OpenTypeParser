@@ -143,20 +143,34 @@ struct CmapSubtable_Format4 {
 		return ss.str();
 	}
 
+	//将unicode映射为glyphId
 	int32 findGlyph(uint16 code) {
 		uint16 segCount = segCountX2 / 2;
+		//遍历每个段
 		for (uint16 i = 0; i < segCount; i++) {
+			//如果存在i使得startCode[i]<=code && code<=endCode[i]
 			if (endCode[i] >= code) {
 				if (startCode[i] <= code) {
+
+					//那么首先判断idRangeOffset[i]是否为0
 					if (idRangeOffset[i] != 0) {
-						//uint16 index = (idRangeOffset[i] / 2 + segCount - i) + code - startCode[i];
+						//如果idRangeOffset[i]不为0
+						//那么根据映射公式
+						//glyphId = *(idRangeOffset[i]/2 + (c - startCount[i]) + &idRangeOffset[i])
+						//来获取glyphId
+						//上面的公式的前提是glyphIdArray immediately follows idRangeOffset
+						//也就glyphIdArray和idRangeOffset在内存里是紧密相邻的
+						//然而在这里glyphIdArray和idRangeOffset是分别new出来的，所以无法直接使用公式
+						//此时可以证明 idRangeOffset[i]/2 + &idRangeOffset[i] == idRangeOffset[i]/2 + i - segCount
+						//所以可得索引为 (idRangeOffset[i] / 2 + i - segCount) + code - startCode[i];
 						uint16 index = (idRangeOffset[i] / 2 + i - segCount) + code - startCode[i];
 						if (index < glyphIdArrayLength) {
+							//最后还要加上idDelta[i]
 							return glyphIdArray[index] + idDelta[i];
 						}
-						//cout << "index(" << index << ") > glyphIdArrayLength(" << glyphIdArrayLength << ")" << endl;
 						return -1;
 					}
+					//如果idRangeOffset[i]为0，那么直接返回idDelta[i] + code
 					return idDelta[i] + code;
 				}
 				else return -1;
